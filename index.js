@@ -10,13 +10,13 @@ let parkingLotsMain = () => {
     readLine.on('line', async (input) => {
         input = input.split(" ");
         switch (input[0]) {
-            case ('create_parking_lot'):
+            case ('createParkingLots'):
 
                 try {
                     const result = await parkingLotMainConstant.createParkingLot(input[1]);
                     console.log(result);
                 } catch (e) {
-                    console.log(`error occured ==> ${e}`);
+                    console.log(`error occurred ==> ${e}`);
                 }
                 break;
 
@@ -25,7 +25,7 @@ let parkingLotsMain = () => {
                     const result = await parkingLotMainConstant.park(input[1].trim(), input[2].trim());
                     console.log(result);
                 } catch (e) {
-                    console.log(`error occured ==> ${e}`);
+                    console.log(`error occurred ==> ${e}`);
                 }
                 break;
 
@@ -36,7 +36,7 @@ let parkingLotsMain = () => {
                     console.log(result);
 
                 } catch (e) {
-                    console.log(`error occured ==> ${e}`);
+                    console.log(`error occurred ==> ${e}`);
                 }
                 break;
 
@@ -48,7 +48,7 @@ let parkingLotsMain = () => {
                     console.log(result);
 
                 } catch (e) {
-                    console.log(`error occured ==> ${e}`);
+                    console.log(`error occurred ==> ${e}`);
                 }
                 break;
 
@@ -59,7 +59,7 @@ let parkingLotsMain = () => {
                     const result = await parkingLotMainConstant.getSlotNumberFromCarNumber(input[1].trim());
                     console.log(result);
                 } catch (e) {
-                    console.log(`error occured ==> ${e}`);
+                    console.log(`error occurred ==> ${e}`);
                 }
                 break;
 
@@ -68,7 +68,7 @@ let parkingLotsMain = () => {
                 break;
 
             default:
-                console.log('Wrong Input Type !!!! ');
+                console.log('Input Type Is Invalid !!!! ');
         }
 
     });
@@ -78,6 +78,6 @@ readLine.on('SIGINT', () => {
     readLine.question('Are you sure you want to exit? (yes/no) ', (answer) => {
         if (answer.match(/^y(es)?$/i)) readLine.pause();
     });
-}); 
- 
+});
+
 parkingLotsMain();
