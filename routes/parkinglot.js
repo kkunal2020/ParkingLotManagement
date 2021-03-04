@@ -41,8 +41,7 @@ router.get('/', async (req, res) => {
   router.delete('/:id', async (req, res) => {
    
   })
-
-
+  
   async function getParkingLot(req, res, next) {
     let parkinglot
     try {
