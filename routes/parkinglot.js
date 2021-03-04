@@ -1,9 +1,16 @@
 const express = require('express')
 const router = express.Router()
+const ParkingLotManagement = require('../models/parkinglot')
 
 // Getting all parkinglots
 router.get('/', async (req, res) => {
-    res.send('Hello Kunal Used For Testing')
+    //res.send('Hello Kunal Used For Testing')
+    try {
+      const parkinglot = await ParkingLotManagement.find()
+      res.json(parkinglot)
+    } catch (err) {
+        res.status(500).json({message: err.message})
+    }
   })
   
   // Getting One parkinglots
