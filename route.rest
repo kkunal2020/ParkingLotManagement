@@ -10,9 +10,9 @@ Content-Type: application/json
 
 {
     "carNumber": "AA-01-A-111",
-    "slot": "1",
+    "slotNumber": "1",
     "parkinglot": "Ground Floor"
 }
 
 ################################
-DELETE http://localhost:3000/parkinglot/6041394dc72cd12a7bd84b33
+DELETE http://localhost:3000/parkinglot/60414ff763468a31c38cbb1d

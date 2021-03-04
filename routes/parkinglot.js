@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
   router.post('/', async (req, res) => {
     const parkinglot = new ParkingLotManagement({
       carNumber: req.body.carNumber,
-      slot: req.body.slot,
+      slotNumber: req.body.slotNumber,
       parkinglot: req.body.parkinglot
     })
     try {

@@ -6,7 +6,7 @@ const parkingLotSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-      slot: {
+      slotNumber: {
         type: String,
         required: true
       },
