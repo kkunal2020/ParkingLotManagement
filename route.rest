@@ -1,1 +1,5 @@
 GET http://localhost:3000/parkinglot
+
+################################
+
+GET http://localhost:3000/parkinglot/12

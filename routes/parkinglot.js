@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   
   // Getting One parkinglots
   router.get('/:id', (req, res) => {
-    
+    res.send(req.params.id)
   })
   
   // Creating one parkinglots
