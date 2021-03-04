@@ -32,14 +32,14 @@ router.get('/', async (req, res) => {
     }
   })
   
-  // Updating One parkinglots
-  router.patch('/:id', async (req, res) => {
-    
-  })
-  
   // Deleting One parkinglots
-  router.delete('/:id', async (req, res) => {
-   
+  router.delete('/:id', getParkingLot, async (req, res) => {
+    try {
+      await res.parkinglot.remove()
+      res.json({ message: 'Deleted ParkingLot' })
+    } catch (err) {
+      res.status(500).json({ message: err.message })
+    }
   })
   
   async function getParkingLot(req, res, next) {

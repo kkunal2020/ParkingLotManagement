@@ -2,7 +2,7 @@ GET http://localhost:3000/parkinglot
 
 ################################
 
-GET http://localhost:3000/parkinglot/6041394dc72cd12a7bd84b33
+GET http://localhost:3000/parkinglot/60414a1dfd6c312ffdfb7e58
 
 ################################
 POST http://localhost:3000/parkinglot
@@ -13,3 +13,6 @@ Content-Type: application/json
     "slot": "1",
     "parkinglot": "Ground Floor"
 }
+
+################################
+DELETE http://localhost:3000/parkinglot/6041394dc72cd12a7bd84b33
