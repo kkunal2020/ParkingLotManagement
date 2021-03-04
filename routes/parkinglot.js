@@ -4,7 +4,6 @@ const ParkingLotManagement = require('../models/parkinglot')
 
 // Getting all parkinglots
 router.get('/', async (req, res) => {
-    //res.send('Hello Kunal Used For Testing')
     try {
       const parkinglot = await ParkingLotManagement.find()
       res.json(parkinglot)
@@ -13,14 +12,24 @@ router.get('/', async (req, res) => {
     }
   })
   
-  // Getting One parkinglots
-  router.get('/:id', (req, res) => {
-    res.send(req.params.id)
+  // Getting one parkinglots
+  router.get('/:id', getParkingLot , (req, res) => {
+    res.send(res.parkinglot.carNumber)
   })
   
   // Creating one parkinglots
   router.post('/', async (req, res) => {
-    
+    const parkinglot = new ParkingLotManagement({
+      carNumber: req.body.carNumber,
+      slot: req.body.slot,
+      parkinglot: req.body.parkinglot
+    })
+    try {
+      const newParkingLot = await parkinglot.save()
+      res.status(201).json(newParkingLot)
+    } catch (err) {
+      res.status(400).json({ message: err.message })
+    }
   })
   
   // Updating One parkinglots
@@ -32,5 +41,21 @@ router.get('/', async (req, res) => {
   router.delete('/:id', async (req, res) => {
    
   })
+
+
+  async function getParkingLot(req, res, next) {
+    let parkinglot
+    try {
+      parkinglot = await ParkingLotManagement.findById((req.params.id))
+      if (parkinglot == null) {
+        return res.status(404).json({ message: 'Cannot find the ParkingLot Id' })
+      }
+    } catch (err) {
+      return res.status(500).json({ message: err.message })
+    }
+    res.parkinglot = parkinglot
+    next()
+  }
+
 
 module.exports = router

@@ -2,4 +2,14 @@ GET http://localhost:3000/parkinglot
 
 ################################
 
-GET http://localhost:3000/parkinglot/12
+GET http://localhost:3000/parkinglot/6041394dc72cd12a7bd84b33
+
+################################
+POST http://localhost:3000/parkinglot
+Content-Type: application/json
+
+{
+    "carNumber": "AA-01-A-111",
+    "slot": "1",
+    "parkinglot": "Ground Floor"
+}
